@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento dos Indicadores SAMU 192</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #00539C;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .container h2 {
+      color: #c00404;
+      /* Cor do título */
+      margin-bottom: 20px;
+    }
+
+    .container .input-container {
+      position: relative;
+      margin: 10px 0;
+    }
+
+    .container .input-container input,
+    .container button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .container .input-container input {
+      padding-left: 40px;
+    }
+
+    .container .input-container .icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .container button {
+      margin: 10px 0;
+      background-color: #c00404;
+      /* Nova cor do botão */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #a00303;
+      /* Cor do botão ao passar o mouse */
+    }
+  </style>
+  <script>
+    // Usuários e senhas registrados
+    const users = {
+      "CENTRALGOIANIA": "GOIANIA2024",
+      "CENTRALAPARECIDADEGOIÂNIA": "APARECIDA2024",
+      "CENTRALFORMOSA": "FORMOSA2024",
+      "CENTRALCALDAS NOVAS": "CALDAS2024",
+      "CENTRALPORANGATU": "PORANGATU2024",
+      "CENTRALIPORA": "IPORA2024",
+      "CENTRALANAPOLIS": "ANAPOLIS2024",
+      "CENTRALGOIAS": "GOIAS2024",
+      "CENTRALCERES": "CERES2024",
+      "CENTRALRIOVERDE": "RIOVERDE2024",
+      "CENTRALITUMBIARA": "ITUMBIARA2024",
+      "CENTRALLUZIANIA": "LUZIANIA2024"
+    };
+
+    function validateLogin(event) {
+      event.preventDefault(); // Evita o envio do formulário
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      // Verifica se o usuário e a senha estão corretos
+      if (users[username] && users[username] === password) {
+        alert("Login bem-sucedido!");
+        // Redirecionar para o formulário, se necessário
+        window.location.href = "https://forms.office.com/r/MkSWPqDhQ6"; // Substitua pelo URL desejado
+      } else {
+        alert("Usuário ou senha incorretos. Tente novamente.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Monitoramento dos Indicadores SAMU 192</h2>
+    <form onsubmit="validateLogin(event)">
+      <div class="input-container">
+        <span class="icon">👤</span>
+        <input type="text" id="username" placeholder="Usuário" required>
+      </div>
+      <div class="input-container">
+        <span class="icon">🔒</span>
+        <input type="password" id="password" placeholder="Senha" required>
+      </div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</body>
+
+</html>
